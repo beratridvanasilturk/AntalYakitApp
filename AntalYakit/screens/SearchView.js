@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import SearchBar from './SearchBar'
 import useResults from './hooks/useResults'
@@ -16,13 +16,15 @@ export default function SearchView() {
   };
 
   return (
+    <ScrollView>
     <View>
       <SearchBar />
       {/* // result ve title'i ResultsList'e gönderir */}
-      <ResultsList title='Öğrenci Dostu' results={filterByPrices('₺')} />
-      <ResultsList title='Aile Ortamı' results={filterByPrices('₺₺')} />
-      <ResultsList title='Elit Mekanlar' results={filterByPrices('₺₺₺')} />
+      <ResultsList title='Öğrenci Dostu:' results={filterByPrices('₺')} />
+      <ResultsList title='Aile Ortamı:' results={filterByPrices('₺₺')} />
+      <ResultsList title='Elit Mekanlar:' results={filterByPrices('₺₺₺')} />
     </View>
+    </ScrollView>
   )
 }
 
