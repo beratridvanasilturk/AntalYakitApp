@@ -8,6 +8,7 @@ export default function ResultList({ title, results }) {
     <View>
       <Text>{title}</Text>
       <FlatList
+      horizontal
         data={results}
         /* // item: her  bir result degeri */
         renderItem={({ item }) => {
