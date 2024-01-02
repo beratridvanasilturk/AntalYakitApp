@@ -1,16 +1,35 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
-import Icon from 'react-native-vector-icons/AntDesign';
-import Icon2 from 'react-native-vector-icons/FontAwesome';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function SearchBar() {
     return (
-        <View>
-            <Text>SearchBar</Text>
-            <Icon name="search1" size={200} color='gray' />
-            <Icon2 name="rocket" size={300} color="#900" />
+        <View style={styles.backgroundStyle}>
+            <AntDesign style={styles.iconStyle} name="search1" size={25} color='gray' />
+            <TextInput style={styles.inputStyle} 
+            placeholder = 'Search'
+            placeholderTextColor={'gray'}
+            autoCorrect = {false}
+            autoCapitalize='none'
+            />
         </View>
     )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    backgroundStyle: {
+        backgroundColor: 'lightgray',
+        flexDirection: 'row',
+        margin: 10,
+        height: 50,
+        alignItems: 'center',
+        borderRadius: 10,
+    },
+    inputStyle: {
+        flex: 1,
+        fontSize: 18,
+    },
+    iconStyle: {
+        marginHorizontal: 15,
+    }
+})
