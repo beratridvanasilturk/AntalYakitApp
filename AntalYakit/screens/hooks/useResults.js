@@ -19,7 +19,7 @@ export default () => {
     // Ilk acildiginda belli parametreleri vermek isteseydik [] icerisinde useEffect kullanabilirdik.
     useEffect(() => {
         // ekran ilk acildiginda durum'e gore arama yapacagiz
-        searchApi("döner");
+        searchApi("Caffe");
     }, []);
 
     // SearchScreen'den gelecek arama degerine gore kullanmak için return ediyoruz.
