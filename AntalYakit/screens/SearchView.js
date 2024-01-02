@@ -20,8 +20,8 @@ export default function SearchView() {
       <SearchBar />
       {/* // result ve title'i ResultsList'e gönderir */}
       <ResultsList title='Öğrenci Dostu' results={filterByPrices('₺')} />
-      <ResultsList title='Aile Dostu' results={filterByPrices('₺₺')} />
-      <ResultsList title='Elit & Lüks' results={filterByPrices('₺₺₺')} />
+      <ResultsList title='Aile Ortamı' results={filterByPrices('₺₺')} />
+      <ResultsList title='Elit Mekanlar' results={filterByPrices('₺₺₺')} />
     </View>
   )
 }

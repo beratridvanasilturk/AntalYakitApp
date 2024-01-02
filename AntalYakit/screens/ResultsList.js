@@ -6,9 +6,11 @@ export default function ResultList({ title, results }) {
   console.log(results);
   return (
     <View>
-      <Text>{title}</Text>
-      <FlatList
+      <Text style={styles.title}>{title}</Text>
+      <FlatList style={styles.container}
+      // horizantal keyword ile yatay olarak (ContainerView) listeleme yapabiliriz.
       horizontal
+      showsHorizontalScrollIndicator={false}
         data={results}
         /* // item: her  bir result degeri */
         renderItem={({ item }) => {
@@ -22,4 +24,14 @@ export default function ResultList({ title, results }) {
   );
 };
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    padding: 5,
+    margin: 5, 
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginLeft: 15,
+  },
+})
