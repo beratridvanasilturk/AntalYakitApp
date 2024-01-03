@@ -35,16 +35,23 @@ export default function ResultShowRestaurant({ route }) {
     <SafeAreaView>
       <TouchableOpacity onPress={() => Linking.openURL(restaurant.url)}>
         <Text style={styles.title}>{restaurant.name + " "}
+          {/* // css vermek icin view icerisine alabilirdik iconlari */}
           {
             restaurant.is_closed ?
               (<AntDesign name="closecircleo" color="red" size={43} />) :
-              (<MaterialIcons name="delivery-dining" color="green" size={43} />) 
-              
-              }
+              (<MaterialIcons name="delivery-dining" color="green" size={43} />)
+          }
         </Text>
 
         <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
-          Tel: {restaurant.display_phone} </Text>
+          Tel:
+          {
+            restaurant.phone ?
+            restaurant.display_phone :
+            " İşletme telefon numarası bilgisi girmemiştir."
+          },
+        </Text>
+
       </TouchableOpacity>
       <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
         Adres: {restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</Text>
@@ -66,6 +73,7 @@ const screenHeight = Dimensions.get('window').height;
 const styles = StyleSheet.create({
 
   title: {
+    // alignSelf: 'center',
     // flex : 1,
     fontFamily: 'Futura',
     fontSize: 18,
