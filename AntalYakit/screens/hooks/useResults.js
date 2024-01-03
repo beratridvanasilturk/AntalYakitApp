@@ -18,8 +18,8 @@ export default () => {
     // .didLoad veya .onAppear gibi ekran ilk yüklendiğinde çalışacak bir fonksiyon yazmak için kullanilir.
     // Ilk acildiginda belli parametreleri vermek isteseydik [] icerisinde useEffect kullanabilirdik.
     useEffect(() => {
-        // ekran ilk acildiginda durum'e gore arama yapacagiz
-        searchApi("Caffe");
+        // ekran ilk acildiginda duruma gore arama yapacagiz
+        searchApi("cafe");
     }, []);
 
     // SearchScreen'den gelecek arama degerine gore kullanmak için return ediyoruz.

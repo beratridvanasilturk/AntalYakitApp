@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import yelp from "/Users/asilturk/Developer/ReactNativeProjects/AntalYakitApp/AntalYakit/screens/api/yelp.js";
 import { Dimensions } from 'react-native';
 import { Linking } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 export default function ResultShowRestaurant({ route }) {
 
@@ -29,20 +31,25 @@ export default function ResultShowRestaurant({ route }) {
   }
 
   return (
-    <ScrollView>
+    <SafeAreaView>
+
+
       <TouchableOpacity onPress={() => Linking.openURL(restaurant.url)}>
         <Text style={styles.title}>{restaurant.name}</Text>
-        <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical:10, marginHorizontal:15 }}>
+        <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
           Tel: {restaurant.display_phone}</Text>
-
       </TouchableOpacity>
+      <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
+        Adres: {restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</Text>
+
       <FlatList
         data={restaurant.photos}
         renderItem={({ item }) => {
           return <Image style={styles.image} source={{ uri: item }} />;
         }}
       />
-    </ScrollView>
+
+    </SafeAreaView>
   )
 }
 
@@ -69,7 +76,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'gray',
     shadowRadius: 12,
-    shadowOffset: { width: 0, height: 1},
+    shadowOffset: { width: 0, height: 1 },
     shadowColor: 'red',
   },
 })
