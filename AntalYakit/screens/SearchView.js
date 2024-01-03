@@ -20,12 +20,19 @@ export default function SearchView() {
     <View>
       <SearchBar />
       {/* // result ve title'i ResultsList'e gönderir */}
-      <ResultsList title='Öğrenci Dostu:' results={filterByPrices('₺')} />
-      <ResultsList title='Aile Ortamı:' results={filterByPrices('₺₺')} />
-      <ResultsList title='Elit Mekanlar:' results={filterByPrices('₺₺₺')} />
+      <ResultsList style={styles.textName} title='Öğrenci Dostu:' results={filterByPrices('₺')} />
+      <ResultsList style={styles.textName} title='Aile Ortamı:' results={filterByPrices('₺₺')} />
+      <ResultsList style={styles.textName} title='Elit Mekanlar:' results={filterByPrices('₺₺₺')} />
     </View>
     </ScrollView>
   )
 }
-
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  textName: {
+      marginHorizontal: 15,
+      fontWeight: 'bold',
+      fontFamily: 'Avenir Next',
+      fontcolor: 'black',
+      textAlign: 'center',
+  },
+})

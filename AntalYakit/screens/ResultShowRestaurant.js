@@ -5,6 +5,7 @@ import { Dimensions } from 'react-native';
 import { Linking } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export default function ResultShowRestaurant({ route }) {
 
@@ -32,12 +33,18 @@ export default function ResultShowRestaurant({ route }) {
 
   return (
     <SafeAreaView>
-
-
       <TouchableOpacity onPress={() => Linking.openURL(restaurant.url)}>
-        <Text style={styles.title}>{restaurant.name}</Text>
+        <Text style={styles.title}>{restaurant.name + " "}
+          {
+            restaurant.is_closed ?
+              (<AntDesign name="closecircleo" color="red" size={43} />) :
+              (<MaterialIcons name="delivery-dining" color="green" size={43} />) 
+              
+              }
+        </Text>
+
         <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
-          Tel: {restaurant.display_phone}</Text>
+          Tel: {restaurant.display_phone} </Text>
       </TouchableOpacity>
       <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
         Adres: {restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</Text>
@@ -79,4 +86,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowColor: 'red',
   },
+  icons: {
+    fontSize: 38,
+  }
 })
