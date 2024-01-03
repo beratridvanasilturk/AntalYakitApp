@@ -56,7 +56,7 @@ export default function ResultShowRestaurant({ route }) {
       <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
         Adres: {restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</Text>
 
-      <Text style= {styles.text2}> İşletme Görüntüsü: </Text>
+      <Text style= {styles.text2}> İşletme Görüntüsü : </Text>
       <FlatList
         data={restaurant.photos}
         renderItem={({ item }) => {
