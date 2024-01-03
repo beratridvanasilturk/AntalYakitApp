@@ -46,9 +46,9 @@ export default function ResultShowRestaurant({ route }) {
         <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
           Tel:
           {
-            restaurant.phone ?
+            restaurant.display_phone ?
             restaurant.display_phone :
-            " İşletme telefon numarası bilgisi girmemiştir."
+            " İşletme iletişim numarası paylaşmamıştır."
           },
         </Text>
 
@@ -56,6 +56,7 @@ export default function ResultShowRestaurant({ route }) {
       <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
         Adres: {restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</Text>
 
+      <Text style= {styles.text2}> İşletme Görüntüsü: </Text>
       <FlatList
         data={restaurant.photos}
         renderItem={({ item }) => {
@@ -96,5 +97,14 @@ const styles = StyleSheet.create({
   },
   icons: {
     fontSize: 38,
-  }
+  },
+  text2: {
+    // alignSelf: 'center',
+    // flex : 1,
+    fontFamily: 'Futura',
+    fontSize: 16,
+    fontStyle: 'italic',
+    marginHorizontal: 15,
+    marginVertical: 10,
+  },
 })

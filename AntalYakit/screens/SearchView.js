@@ -3,8 +3,11 @@ import React from 'react'
 import SearchBar from './SearchBar'
 import useResults from './hooks/useResults'
 import ResultsList from './ResultsList'
+import { useState } from 'react'
 
 export default function SearchView() {
+ 
+  const [searchedElement, setSearchedElement] = useState("")
   const [searchApi, results] = useResults();
   console.log(results);
 
@@ -18,7 +21,14 @@ export default function SearchView() {
   return (
     <ScrollView>
     <View>
-      <SearchBar />
+      <SearchBar 
+      // SearchBar'da tanimladigimiz property'leri SearchView'de tanimliyoruz.
+      searchedText = {searchedElement}
+      onTextInputChange = {setSearchedElement}
+      onTextInputEditingEnded = {() => 
+      searchApi(searchedElement)
+      }  
+      />
       {/* // result ve title'i ResultsList'e gönderir */}
       <ResultsList style={styles.textName} title='Öğrenci Dostu:' results={filterByPrices('₺')} />
       <ResultsList style={styles.textName} title='Aile Ortamı:' results={filterByPrices('₺₺')} />

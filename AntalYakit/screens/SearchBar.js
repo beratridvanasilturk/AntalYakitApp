@@ -2,16 +2,25 @@ import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-export default function SearchBar() {
+export default function SearchBar( {searchedText, onTextInputChange, onTextInputEditingEnded} ) {
     return (
         <View style={styles.backgroundStyle}>
             <AntDesign style={styles.iconStyle} name="search1" size={25} color='gray' />
+            
             <TextInput style={styles.inputStyle} 
             placeholder = 'Search'
             placeholderTextColor={'gray'}
             autoCorrect = {false}
             autoCapitalize='none'
+
+            value = {searchedText}
+
+            // property degisince onTextInputChange calisacak
+            onChangeText={onTextInputChange}
+            // onEndEditing: textField icerisindeki yazma islemi bittiginde tetiklenir
+            onEndEditing={onTextInputEditingEnded}
             />
+
         </View>
     )
 }
