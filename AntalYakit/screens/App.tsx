@@ -10,13 +10,12 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-      <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerTitle: 'AntalYakıt' }} >
-          <Stack.Screen name="Home" component={SearchView} />
-          <Stack.Screen name="ResultShowRestaurant" component={ResultShowRestaurant} />
-        </Stack.Navigator>
-      </NavigationContainer>
- 
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='SearchView' screenOptions={{ headerTitle: 'AntalYakıt App' }} >
+        <Stack.Screen name="Home" component={SearchView} />
+        <Stack.Screen name="ResultShowRestaurant" component={ResultShowRestaurant} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 

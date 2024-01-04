@@ -37,6 +37,7 @@ export default function SearchView() {
         */}
         {results.length > 0 ? (
           <>
+
             {/* // result ve title'i ResultsList'e gönderir */}
             <ResultsList style={styles.textName} title='Öğrenci Dostu:' results={filterByPrices('₺')} />
             <ResultsList style={styles.textName} title='Aile Ortamı:' results={filterByPrices('₺₺')} />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import yelp from "../api/yelp";
+import YelpApi from "../api/YelpApi";
 
 export default () => {
 
@@ -8,7 +8,7 @@ export default () => {
     const searchApi = async (searchTerm) => {
         try {
             // donen cevabi response degiskenine atiyoruz.
-            const response = await yelp.get('/search', {
+            const response = await YelpApi.get('/search', {
                 params: {
                     limit: 50,
                     term: searchTerm,

@@ -1,6 +1,6 @@
-import { FlatList, StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native'
+import { FlatList, StyleSheet, Text, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import yelp from "/Users/asilturk/Developer/ReactNativeProjects/AntalYakitApp/AntalYakit/screens/api/yelp.js";
+import YelpApi from "./api/YelpApi.js";
 import { Dimensions } from 'react-native';
 import { Linking } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -16,7 +16,7 @@ export default function ResultShowRestaurant({ route }) {
     // await kullanabilmek icin async yapmamiz gerekiyor, Swift'deki async ile ayni. =) main thread'i kitlememek icin await kullanilir. =)
     // await'in amaci cevap gelene kadar beklemesini saglamak, Swift'deki await ile ayni. =) 
     // baseURL sonrasinda / ekleyerek id'leri cekiyoruz 
-    const response = await yelp.get(`/${id}`);
+    const response = await YelpApi.get(`/${id}`);
     setRestaurant(response.data);
   };
 
@@ -47,8 +47,8 @@ export default function ResultShowRestaurant({ route }) {
           Tel:
           {
             restaurant.display_phone ?
-            restaurant.display_phone :
-            " İşletme iletişim numarası paylaşmamıştır."
+              restaurant.display_phone :
+              " İşletme iletişim numarası paylaşmamıştır."
           },
         </Text>
 
@@ -56,7 +56,7 @@ export default function ResultShowRestaurant({ route }) {
       <Text style={{ fontSize: 14, textAlign: 'left', fontWeight: 'bold', marginVertical: 10, marginHorizontal: 15 }}>
         Adres: {restaurant.location.display_address[0]} {restaurant.location.display_address[1]}</Text>
 
-      <Text style= {styles.text2}> İşletme Görüntüsü : </Text>
+      <Text style={styles.text2}> İşletme Görüntüsü : </Text>
       <FlatList
         data={restaurant.photos}
         renderItem={({ item }) => {
