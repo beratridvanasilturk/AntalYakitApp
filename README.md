@@ -8,4 +8,6 @@ AntalYakit App AppStore'da paylaşılmak üzere AppStore'a gönderilmiş ve ince
 
 Kısa zamanda AppStore ve PlayStore'da buluşmak ümidiyle.
 
-![AppIcon~ios-marketing](https://github.com/beratridvanasilturk/AntalYakitApp/assets/99040236/5ab6f5b3-8351-4a8a-a225-7cb8c5b9f03f)
+Uygulama Tanıtım Videosu:
+
+https://github.com/beratridvanasilturk/AntalYakitApp/assets/99040236/fb428f4a-3ef9-433c-ba88-4a3421fcb4c4
